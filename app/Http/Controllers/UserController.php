@@ -34,6 +34,7 @@ class UserController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'max:255'],
                 'password' => ['required', 'confirmed', 'min:6'],
+                'type' => ['required' ]
             ]
         );
 
@@ -50,8 +51,8 @@ class UserController extends Controller
 
 
         // return correct msg
-        // session()->put('email', $data['email']);
-        Auth::login($user);
+        session()->put('email', $data['email']);
+        // Auth::login($user);
         return redirect('/home')->with('success', 'User registered successfully!');
     }
 

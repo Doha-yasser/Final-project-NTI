@@ -60,9 +60,9 @@
         </div>
         <div>
             <label for="student">Student</label>
-            <input type="radio" name="user_type" id="type">
+            <input type="radio" name="type" id="type" value="student">
             <label for="instractor">Instractor</label>
-            <input type="radio" name="user_type" id="instractor">
+            <input type="radio" name="type" id="instractor" value="instractor">
         </div>
         <input type="submit" value="Register" class="btn">
     </form>
