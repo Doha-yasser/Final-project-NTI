@@ -1,13 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
+
+class Controller extends BaseController
+{
+    use AuthorizesRequests, ValidatesRequests;
+}
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('login_middleware')->except('register', 'store', 'login', 'doLogin');
+    }
     public function register()
     {
         return view('user.register');
@@ -34,7 +43,7 @@ class UserController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'max:255'],
                 'password' => ['required', 'confirmed', 'min:6'],
-                'type' => ['required' ]
+                'type' => ['required']
             ]
         );
 
@@ -62,7 +71,7 @@ class UserController extends Controller
         if (!$oldMail) {
             return 'User does not exist';
         }
-        return redirect('/');
+        return redirect('/', compact('oldMail'));
     }
 
 
@@ -113,6 +122,7 @@ class UserController extends Controller
 
         if ($user && Hash::check($data['password'], $user->password)) {
             // ✅ login success → redirect to home
+            session()->put('email', $user->email);
             return redirect('home')->with('success', 'Welcome back, ' . $user->name . '!');
         }
 
@@ -151,6 +161,12 @@ class UserController extends Controller
         // $user->delete(); ..... from db
         session()->flush();     // all session only 
         return redirect('/');
+    }
+
+
+    public function pageNotFound()
+    {
+        return view('pageNotFound');
     }
 }
 
