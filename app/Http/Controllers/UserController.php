@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Models\User;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Symfony\Polyfill\Intl\Idn\Resources\unidata\DisallowedRanges;
+
+
 
 class UserController extends Controller
 {
@@ -21,13 +26,7 @@ class UserController extends Controller
 
     public function home()
     {
-        if (!session()->has('user')) {
-            return redirect('/user/login');
-        }
-
-        return (session('user')->type === 'student') ?
-            view('studentHome') :
-            view('insHome');
+        return view('dashboard.home.index');
     }
 
     public function index()
@@ -67,12 +66,11 @@ class UserController extends Controller
 
         // return correct msg
         session()->put('user', $user);
+        
         // Auth::login($user);
         return redirect()->route('home');
     }
-
-    public function read(Request $request, $email)
-    {
+    public function read(Request $request, $email){
         $oldMail = $request->get('email');
         if (!$oldMail) {
             return 'User does not exist';
@@ -105,8 +103,7 @@ class UserController extends Controller
         $user->password = Hash::make($data['password']);
         $user->save();
 
-        return redirect()->route('home');
-
+        return redirect('home');
     }
 
 
@@ -155,8 +152,6 @@ class UserController extends Controller
             return redirect('user/reset-password');
         }
         return back()->withErrors('This email is not registered');
-
-
     }
 
 
@@ -186,4 +181,3 @@ class UserController extends Controller
             view('Dashboard.insDashboard');
     }
 }
-

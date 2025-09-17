@@ -16,15 +16,11 @@ class login_middleware
     public function handle(Request $request, Closure $next): Response
     {
 
-        // if ($request->routeIs('index')) {
-        //     return $next($request);
-        // }
 
-        if (!session()->has('user') && !$request->is('login', 'register', '/') ) {
-            return redirect('/');
+        if (!session()->has('user')) {
+            session()->forget('email');
+            return redirect()->route('login.view');
         }
-
-
         return $next($request);
     }
 }
