@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 
-class Controller extends BaseController
-{
-    use AuthorizesRequests, ValidatesRequests;
-}
+use App\Models\User;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Symfony\Polyfill\Intl\Idn\Resources\unidata\DisallowedRanges;
+
+
 
 class UserController extends Controller
 {
@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function home()
     {
-        return view('home');
+        return view('dashboard.home.index');
     }
 
     public function index()
@@ -60,7 +60,8 @@ class UserController extends Controller
 
 
         // return correct msg
-        session()->put('email', $data['email']);
+        session()->put('user', $user);
+        
         // Auth::login($user);
         return redirect('/home')->with('success', 'User registered successfully!');
     }
@@ -100,7 +101,6 @@ class UserController extends Controller
         $user->save();
 
         return redirect('home');
-
     }
 
 
@@ -149,8 +149,6 @@ class UserController extends Controller
             return redirect('user/reset-password');
         }
         return back()->withErrors('This email is not registered');
-
-
     }
 
 
@@ -169,4 +167,3 @@ class UserController extends Controller
         return view('pageNotFound');
     }
 }
-
