@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class login_middleware
+class auth_middleware
 {
     /**
      * Handle an incoming request.
@@ -15,16 +15,11 @@ class login_middleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        // if ($request->routeIs('index')) {
-        //     return $next($request);
-        // }
-
-        if (!session()->has('user') && !$request->is('login', 'register', '/') ) {
-            return redirect('/');
+        if (session()->has('user')) {
+            if ($request->routeIs('regist', 'user.store', 'user.login', 'doLogin', 'checkMail', 'reset' , 'index')) {
+                return back();
+            }
         }
-
-
         return $next($request);
     }
 }

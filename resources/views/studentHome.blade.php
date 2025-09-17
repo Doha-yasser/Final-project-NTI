@@ -6,7 +6,7 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Home page</h1>
+        <h1>student Home page</h1>
         <a href="{{route('logout')  }}"><button>Log out</button></a>
     </body>
 </html>

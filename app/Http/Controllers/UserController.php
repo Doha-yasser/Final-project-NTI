@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
-
-class Controller extends BaseController
-{
-    use AuthorizesRequests, ValidatesRequests;
-}
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function __construct()
     {
         $this->middleware('login_middleware')->except('register', 'store', 'login', 'doLogin');
+        $this->middleware('auth_middleware')->only('register', 'store', 'login', 'doLogin');
+
     }
     public function register()
     {
@@ -24,12 +21,21 @@ class UserController extends Controller
 
     public function home()
     {
-        return view('home');
+        if (!session()->has('user')) {
+            return redirect('/user/login');
+        }
+
+        return (session('user')->type === 'student') ?
+            view('studentHome') :
+            view('insHome');
     }
 
     public function index()
     {
-        return view('index');
+        if (!session()->has('user')) {
+            return view('index');
+        }
+        return redirect()->route('home');
     }
 
 
@@ -60,9 +66,9 @@ class UserController extends Controller
 
 
         // return correct msg
-        session()->put('email', $data['email']);
+        session()->put('user', $user);
         // Auth::login($user);
-        return redirect('/home')->with('success', 'User registered successfully!');
+        return redirect()->route('home');
     }
 
     public function read(Request $request, $email)
@@ -99,7 +105,7 @@ class UserController extends Controller
         $user->password = Hash::make($data['password']);
         $user->save();
 
-        return redirect('home');
+        return redirect()->route('home');
 
     }
 
@@ -122,8 +128,8 @@ class UserController extends Controller
 
         if ($user && Hash::check($data['password'], $user->password)) {
             // ✅ login success → redirect to home
-            session()->put('email', $user->email);
-            return redirect('home')->with('success', 'Welcome back, ' . $user->name . '!');
+            session()->put('user', $user);
+            return redirect()->route('home');
         }
 
         return '<h1>User does not exist</h1>';
@@ -145,7 +151,7 @@ class UserController extends Controller
 
         $user = User::where('email', $data['email'])->first();
         if ($user) {
-            session()->put('email', $user['email']);
+            session()->put('email', $user->email);
             return redirect('user/reset-password');
         }
         return back()->withErrors('This email is not registered');
@@ -156,10 +162,8 @@ class UserController extends Controller
 
     public function logout()
     {
-        $user = User::where('email', session('email'))->first();
-
         // $user->delete(); ..... from db
-        session()->flush();     // all session only 
+        session()->forget('user');     // all session only 
         return redirect('/');
     }
 
@@ -167,6 +171,19 @@ class UserController extends Controller
     public function pageNotFound()
     {
         return view('pageNotFound');
+    }
+
+
+
+    public function showDashboard()
+    {
+        if (!session()->has('user')) {
+            return redirect()->route('user.login');
+        }
+
+        return session('user')->type === 'student' ?
+            view('Dashboard.studentDashboard') :
+            view('Dashboard.insDashboard');
     }
 }
 
