@@ -38,8 +38,7 @@
             <div class="col-lg-7 mx-auto">
                 <div class="card card-item">
                     <div class="card-body">
-                        <h3 class="card-title fs-24 lh-35 pb-2">Otp</h3>
-
+                        <h3 class="card-title fs-24 lh-35 pb-2">{{__("site.otp")}}</h3>
                         <div class="section-block"></div>
                         <form method="post" class="pt-4" action="{{ route('sendOtp') }}">
                             @csrf
