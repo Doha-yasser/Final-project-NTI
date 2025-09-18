@@ -35,6 +35,11 @@ class EnrollController extends Controller
     {
         $course = Course::find($request->course_id);
         $user = User::find(session()->get('user')->id);
+        if(!$user){
+            return redirect()->route('login.view');
+        }elseif (!$course) {
+            return back()->with('error', __("site.not_found"));
+        }
         if ($user->enrollments()->where('course_id', $request->course_id)->exists()) {
             return back()->with('error', __("site.already_enrolled"));
         } else if ($course->isFull) {

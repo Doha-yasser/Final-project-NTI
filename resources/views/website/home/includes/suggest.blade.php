@@ -45,6 +45,7 @@
             <form action="{{route("enrollments.store")}}" method="POST">
                 @csrf
                 <input type="hidden" name="course_id" value="{{$course->id}}">
+                @if(session('user'))
                 @if($course->isEnrolled(session('user')->id))
 
                     <button class="btn theme-btn" type="submit" disabled>{{__("site.you are enrolled")}} <i
@@ -52,6 +53,10 @@
                     @elseif($course->seatsLeft > 0)
                     <button class="btn theme-btn" type="submit">{{__("site.enroll")}} <i
                             class="la la-arrow-right icon ml-1"></i></button>
+                    @else
+                    <button class="btn theme-btn" type="submit" disabled>{{__("site.enroll")}} <i
+                            class="la la-arrow-right icon ml-1"></i></button>
+                    @endif
                     @else
                     <button class="btn theme-btn" type="submit" disabled>{{__("site.enroll")}} <i
                             class="la la-arrow-right icon ml-1"></i></button>
