@@ -21,7 +21,7 @@ class CourseRequest extends FormRequest
      */
     public function rules(): array
     {
-        $courseId = $this->route("id");
+        $courseId = $this->route("mycourse");
 
         return [
             'title' => 'required|string|max:255',
@@ -29,11 +29,11 @@ class CourseRequest extends FormRequest
             'start_date' => 'required|date|after_or_equal:today',
             'max_students' => 'required|integer|min:1',
             'image' => $courseId
-                ? 'nullable|image|mimes:jpeg,jpg,png,gif,svg|max:2048'
-                : 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+                ? 'nullable|image|mimes:jpeg,jpg,png,gif,svg'
+                : 'required|image|mimes:jpeg,jpg,png,gif,svg',
             'video' => $courseId
-                ? 'nullable|file|mimes:mp4,mov,avi,wmv|max:102400'
-                : 'required|file|mimes:mp4,mov,avi,wmv|max:102400',
+                ? 'nullable|file|mimes:mp4,mov,avi,wmv'
+                : 'required|file|mimes:mp4,mov,avi,wmv',
         ];
     }
 }

@@ -41,19 +41,23 @@ class CourseController extends Controller
         $course = Course::find($id);
         return view('website/dashboard/course/edit', compact('course'));
     }
-    public function update(CourseRequest $request, Course $course)
+    public function update(CourseRequest $request,  $id)
     {
         $data = $request->all();
+        $course = Course::find($id);
         $data['image'] = $this->editFile($request, $course, 'courses/images', 'image');
         $data['video'] = $this->editFile($request, $course, 'courses/videos' ,'video');
+        
         $course->update($data);
         return redirect()->route('mycourses.index')->with('success', __("site.updated_successfully"));
     }
-    public function show(Course $course){
+    public function show( $id){
+        $course = Course::find($id);
         return view('website/course', compact('course'));
     }
-    public function destroy(Course $course)
+    public function destroy($id)
     {
+        $course = Course::find($id);
         $this->deleteFile($course->image);
         $this->deleteFile($course->video);
         $course->delete();

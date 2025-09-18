@@ -26,7 +26,7 @@
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
                                 </path>
                             </svg>
-                            Dark Mode
+                            {{__("site.Dark Mode")}}
                         </button>
                         <button
                             class="theme-picker-btn light-mode-btn w-100 font-weight-semi-bold justify-content-center"
@@ -47,7 +47,7 @@
                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
                                 </line>
                             </svg>
-                            Light Mode
+                            {{__("site.Light Mode")}}
                         </button>
                     </div>
                 </li>
@@ -56,7 +56,7 @@
                         @if(session('user')->type == 'instructor')
                         <li>
                             <a href="{{ route('mycourses.index') }}">
-                                <i class="la la-file-video-o mr-1"></i> My courses
+                                <i class="la la-file-video-o mr-1"></i> {{__("site.My courses")}}
                             </a>
                         </li>
                         <li>
@@ -65,17 +65,22 @@
                         @endif
                         <li>
                             <a href="{{ route('home') }}">
-                                <i class="la la-user mr-1"></i> home
+                                <i class="la la-user mr-1"></i> {{__("site.home")}}
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('dashboard') }}">
-                                <i class="la la-user mr-1"></i> dashboard
+                                <i class="la la-user mr-1"></i> {{__("site.dashboard")}}
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('profile.index') }}">
-                                <i class="la la-edit mr-1"></i> Edit profile
+                                <i class="la la-edit mr-1"></i> {{__("site.Edit profile")}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route( 'profile.changeLang') }}">
+                                <i class="la la-edit mr-1"></i> {{__("site.".session('user')->lang) }}
                             </a>
                         </li>
                         <li>
@@ -84,7 +89,7 @@
 
                         <li>
                             <a href="{{ route('logout') }}">
-                                <i class="la la-power-off mr-1"></i> Logout
+                                <i class="la la-power-off mr-1"></i> {{__("site.Logout")}}
                             </a>
                         </li>
                         <li>
