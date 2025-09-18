@@ -17,9 +17,9 @@ class login_middleware
     {
 
 
-        if (! session()->has('user')) {
+        if (!session()->has('user')) {
             session()->forget('email');
-            return redirect()->route('login.view'); 
+            return redirect()->route('login.view');
         }
         return $next($request);
     }
