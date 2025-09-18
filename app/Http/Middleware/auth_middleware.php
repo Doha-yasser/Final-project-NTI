@@ -16,7 +16,8 @@ class auth_middleware
     public function handle(Request $request, Closure $next): Response
     {
         if (session()->has('user')) {
-            if ($request->routeIs('regist', 'user.store', 'user.login', 'doLogin', 'checkMail', 'reset', 'index')) {
+            if ($request->routeIs('regist', 'user.store', 'user.login', 'doLogin',
+             'checkMail', 'reset', 'index', "login.view", "signup.view", "forgetpassword.view")) {
                 return redirect()->route("home");
             }
         }
