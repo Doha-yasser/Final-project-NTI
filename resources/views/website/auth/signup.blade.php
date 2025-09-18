@@ -9,7 +9,7 @@
     <div class="container">
         <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
             <div class="section-heading">
-                <h2 class="section__title text-white">Sign Up</h2>
+                <h2 class="section__title text-white">{{__("site.Sign Up")}}</h2>
             </div>
         </div><!-- end breadcrumb-content -->
     </div><!-- end container -->
@@ -28,15 +28,15 @@
             <div class="col-lg-7 mx-auto">
                 <div class="card card-item">
                     <div class="card-body">
-                        <h3 class="card-title text-center fs-24 lh-35 pb-4">Create an Account and <br> Start
-                            Learning!</h3>
+                        <h3 class="card-title text-center fs-24 lh-35 pb-4">{{__("site.Create an Account and")}} <br> {{__("site.Start
+                            Learning!")}}</h3>
                         <div class="section-block"></div>
                         @include('website.layouts.components.messages.success')
                         @include('website.layouts.components.messages.displayErrors')
                         <form method="post" class="pt-4" action="{{ route('signup') }}">
                             @csrf
                             <div class="input-box">
-                                <label class="label-text">Name</label>
+                                <label class="label-text">{{__("site.Name")}}</label>
                                 <div class="form-group">
                                     <input class="form-control form--control" type="text" name="name" placeholder="name"
                                         value="{{ old('name') }}">
@@ -44,7 +44,7 @@
                                 </div>
                             </div><!-- end input-box -->
                             <div class="input-box">
-                                <label class="label-text">Email Address</label>
+                                <label class="label-text">{{__("site.Email Address")}}</label>
                                 <div class="form-group">
                                     <input class="form-control form--control" type="email" name="email"
                                         placeholder="Enter email address" value="{{ old('email') }}">
@@ -52,7 +52,7 @@
                                 </div>
                             </div><!-- end input-box -->
                             <div class="input-box">
-                                <label class="label-text">Password</label>
+                                <label class="label-text">{{__("site.Password")}}</label>
                                 <div class="input-group mb-3">
                                     <span class="la la-lock input-icon"></span>
                                     <input class="form-control form--control password-field" type="password"
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="input-box">
-                                <label class="label-text">Password Confirm</label>
+                                <label class="label-text">{{__("site.Password Confirm")}}</label>
                                 <div class="input-group mb-3">
                                     <span class="la la-lock input-icon"></span>
                                     <input class="form-control form--control password-field" type="password"
@@ -104,14 +104,14 @@
                                 </div>
                             </div>
                             <div class="input-box ">
-                                <label class="label-text">Role</label>
+                                <label class="label-text">{{__("site.Role")}}</label>
 
                                 <div class="select-container w-auto">
                                     <div class="dropdown bootstrap-select select-container-select dropup">
                                         <select class="select-container-select" tabindex="-98" name="type">
-                                            <option value="user" @if(old('role')=='user' ) selected @endif>User</option>
+                                            <option value="user" @if(old('role')=='user' ) selected @endif>{{__("site.User")}}</option>
                                             <option value="instructor" @if(old('role')=='instructor' ) selected @endif>
-                                                Instructor</option>
+                                                {{__("site.Instructor")}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -122,12 +122,12 @@
 
 
 
-                                <button class="btn theme-btn" type="submit">Register Account <i
+                                <button class="btn theme-btn" type="submit">{{__("site.Register Account")}} <i
                                         class="la la-arrow-right icon ml-1"></i></button>
 
 
-                                <p class="fs-14 pt-2">Already have an account? <a href="login"
-                                        class="text-color hover-underline">Log in</a></p>
+                                <p class="fs-14 pt-2">{{__("site.Already have an account? ")}}<a href="login"
+                                        class="text-color hover-underline">{{__("site.Log in")}}</a></p>
                             </div><!-- end btn-box -->
 
                         </form>

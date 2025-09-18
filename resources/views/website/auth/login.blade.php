@@ -14,7 +14,7 @@
     <div class="container">
         <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
             <div class="section-heading">
-                <h2 class="section__title text-white">Login</h2>
+                <h2 class="section__title text-white">{{__("site.Login")}}</h2>
             </div>
 
         </div><!-- end breadcrumb-content -->
@@ -34,14 +34,14 @@
             <div class="col-lg-7 mx-auto">
                 <div class="card card-item">
                     <div class="card-body">
-                        <h3 class="card-title text-center fs-24 lh-35 pb-4">Login to Your Account!</h3>
+                        <h3 class="card-title text-center fs-24 lh-35 pb-4">{{__("site.Login to Your Account!")}}</h3>
                         <div class="section-block"></div>
                         @include('website.layouts.components.messages.success')
                         @include('website.layouts.components.messages.displayErrors')
                         <form method="post" class="pt-4" action="{{ route('login') }}">
                             @csrf
                             <div class="input-box">
-                                <label class="label-text">Email </label>
+                                <label class="label-text">{{__("site.Email")}}</label>
                                 <div class="form-group">
                                     <input class="form-control form--control" type="text" name="email"
                                         placeholder="Email">
@@ -50,7 +50,7 @@
                                 </div>
                             </div><!-- end input-box -->
                             <div class="input-box">
-                                <label class="label-text">Password</label>
+                                <label class="label-text">{{__("site.Password")}}</label>
                                 <div class="input-group mb-3">
                                     <span class="la la-lock input-icon"></span>
                                     <input class="form-control form--control password-field" type="password"
@@ -82,14 +82,14 @@
                                         <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox"
                                             required>
                                         <label class="custom-control-label custom--control-label"
-                                            for="rememberMeCheckbox">Remember Me</label>
+                                            for="rememberMeCheckbox">{{__("site.Remember Me")}}</label>
                                     </div><!-- end custom-control -->
-                                    <a href="forgetpassword" class="btn-text">Forgot my password?</a>
+                                    <a href="forgetpassword" class="btn-text">{{__("site.Forgot my password?")}}</a>
                                 </div>
-                                <button class="btn theme-btn" type="submit">Login Account <i
+                                <button class="btn theme-btn" type="submit">{{__("site.Login Account")}} <i
                                         class="la la-arrow-right icon ml-1"></i></button>
-                                <p class="fs-14 pt-2">Don't have an account? <a href="signup"
-                                        class="text-color hover-underline">Register</a></p>
+                                <p class="fs-14 pt-2">{{__("site.Don't have an account?")}} <a href="signup"
+                                        class="text-color hover-underline">{{__("site.Register")}}</a></p>
                             </div><!-- end btn-box -->
                         </form>
                     </div><!-- end card-body -->

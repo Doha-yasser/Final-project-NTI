@@ -8,11 +8,11 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="section-heading">
-                        <h2 class="section__title text-white fs-65 lh-80 pb-3">We Help You Learn <br> What You Love
+                        <h2 class="section__title text-white fs-65 lh-80 pb-3">{{__("site.We Help You Learn")}} <br> {{__("site.What You Love")}}
                         </h2>
-                        <p class="section__desc text-white pb-4">Emply dummy text of the printing and typesetting
-                            industry orem Ipsum has been the
-                            <br>industry's standard dummy text ever sinceprinting and typesetting industry.
+                        <p class="section__desc text-white pb-4">{{__("site.Emply dummy text of the printing and typesetting
+                            industry orem Ipsum has been the")}}
+                            <br>{{__("site.industry's standard dummy text ever sinceprinting and typesetting industry.")}}
                         </p>
                     </div><!-- end section-heading -->
 
@@ -23,11 +23,11 @@
             <div class="container">
                 <div class="hero-content text-center">
                     <div class="section-heading">
-                        <h2 class="section__title text-white fs-65 lh-80 pb-3">Join Aduca & Get <br> Your Free
-                            Courses!</h2>
-                        <p class="section__desc text-white pb-4">Emply dummy text of the printing and typesetting
-                            industry orem Ipsum has been the
-                            <br>industry's standard dummy text ever sinceprinting and typesetting industry.
+                        <h2 class="section__title text-white fs-65 lh-80 pb-3">{{__("site.Join Aduca & Get")}} <br> {{__("site.Your Free
+                            Courses!")}}</h2>
+                        <p class="section__desc text-white pb-4">{{__("site.Emply dummy text of the printing and typesetting
+                            industry orem Ipsum has been the")}}
+                            <br>{{__("site.industry's standard dummy text ever sinceprinting and typesetting industry.")}}
                         </p>
                     </div><!-- end section-heading -->
 
@@ -39,11 +39,11 @@
             <div class="container">
                 <div class="hero-content text-right">
                     <div class="section-heading">
-                        <h2 class="section__title text-white fs-65 lh-80 pb-3">Learn Anything, <br> Anytime,
-                            Anywhere</h2>
-                        <p class="section__desc text-white pb-4">Emply dummy text of the printing and typesetting
-                            industry orem Ipsum has been the
-                            <br>industry's standard dummy text ever sinceprinting and typesetting industry.
+                        <h2 class="section__title text-white fs-65 lh-80 pb-3">{{__("site.Learn Anything,")}} <br> {{__("site.Anytime")}},
+                            {{__("site.Anywhere")}}</h2>
+                        <p class="section__desc text-white pb-4">{{__("site.Emply dummy text of the printing and typesetting
+                            industry orem Ipsum has been the")}}
+                            <br>{{__("site.industry's standard dummy text ever sinceprinting and typesetting industry.")}}
                         </p>
                     </div>
 
@@ -116,8 +116,8 @@
                             </g>
                         </svg>
                     </div>
-                    <h3 class="info__title">Expert Teachers</h3>
-                    <p class="info__text">Timply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    <h3 class="info__title">{{__("site.Expert Teachers")}}</h3>
+                    <p class="info__text">{{__("site.Timply dummy text of the printing and typesetting industry. Lorem Ipsum")}}
                     </p>
                 </div><!-- end info-box -->
             </div><!-- end col-lg-3 -->
@@ -138,8 +138,8 @@
                                 d="m28.709 72a1 1 0 0 1 -.736-1.677l16.092-17.515a1 1 0 0 1 1.473 1.354l-16.093 17.515a1 1 0 0 1 -.736.323z" />
                         </svg>
                     </div>
-                    <h3 class="info__title">Easy Communication</h3>
-                    <p class="info__text">Timply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    <h3 class="info__title">{{__("site.Easy Communication")}}</h3>
+                    <p class="info__text">{{__("site.Timply dummy text of the printing and typesetting industry. Lorem Ipsum")}}
                     </p>
                 </div><!-- end info-box -->
             </div><!-- end col-lg-3 -->
@@ -164,8 +164,8 @@
                                 d="m66.406 49.5h-5.687a1 1 0 0 1 -.978-1.211l.736-3.411a3.156 3.156 0 0 1 6.171 0l.736 3.411a1 1 0 0 1 -.978 1.211zm-4.448-2h3.209l-.474-2.2a1.157 1.157 0 0 0 -2.261 0z" />
                         </svg>
                     </div>
-                    <h3 class="info__title">Get Certificates</h3>
-                    <p class="info__text">Timply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    <h3 class="info__title">{{__("site.Get Certificates")}}</h3>
+                    <p class="info__text">{{__("site.Timply dummy text of the printing and typesetting industry. Lorem Ipsum")}}
                     </p>
                 </div><!-- end info-box -->
             </div><!-- end col-lg-3 -->
@@ -184,8 +184,8 @@
 <section class="course-area pb-120px">
     <div class="container">
         <div class="section-heading text-center">
-            <h5 class="ribbon ribbon-lg mb-2">Choose your desired courses</h5>
-            <h2 class="section__title">The world's largest selection of courses</h2>
+            <h5 class="ribbon ribbon-lg mb-2">{{__("site.Choose your desired courses")}}</h5>
+            <h2 class="section__title">{{__("site.The world's largest selection of courses")}}</h2>
         </div><!-- end section-heading -->
 
     </div><!-- end container -->
@@ -241,7 +241,7 @@
                 
             </div><!-- end tab-content -->
             <div class="more-btn-box mt-4 text-center">
-                <a href="{{ route('courses.index') }}" class="btn theme-btn">Browse all Courses <i class="la la-arrow-right icon ml-1"></i></a>
+                <a href="{{ route('courses.index') }}" class="btn theme-btn">{{__("site.Browse all Courses")}} <i class="la la-arrow-right icon ml-1"></i></a>
             </div><!-- end more-btn-box -->
         </div><!-- end container -->
     </div><!-- end card-content-wrapper -->
@@ -257,8 +257,8 @@
     <div class="course-wrapper">
         <div class="container">
             <div class="section-heading text-center">
-                <h5 class="ribbon ribbon-lg mb-2">Learn on your schedule</h5>
-                <h2 class="section__title">Students are viewing</h2>
+                <h5 class="ribbon ribbon-lg mb-2">{{__("site.Learn on your schedule")}}</h5>
+                <h2 class="section__title">{{__("site.Students are viewing")}}</h2>
                 <span class="section-divider"></span>
             </div><!-- end section-heading -->
             <div class="course-carousel owl-action-styled owl--action-styled mt-30px">
@@ -291,8 +291,8 @@
                             </g>
                         </svg>
                     </div>
-                    <h4 class="counter__title counter text-color-2">7520</h4>
-                    <p class="counter__meta">expert instructors</p>
+                    <h4 class="counter__title counter text-color-2">{{__("site.7520")}}</h4>
+                    <p class="counter__meta">{{__("site.expert instructors")}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 responsive-column-half">
@@ -338,8 +338,8 @@
                             </g>
                         </svg>
                     </div>
-                    <h4 class="counter__title counter text-color-3">54,252</h4>
-                    <p class="counter__meta">foreign followers</p>
+                    <h4 class="counter__title counter text-color-3">{{__("site.54,252")}}</h4>
+                    <p class="counter__meta">{{__("site.foreign followers")}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 responsive-column-half">
@@ -399,8 +399,8 @@
                             </g>
                         </svg>
                     </div>
-                    <h4 class="counter__title counter text-color-4">97,220</h4>
-                    <p class="counter__meta">students enrolled</p>
+                    <h4 class="counter__title counter text-color-4">{{__("site.97,220")}}</h4>
+                    <p class="counter__meta">{{__("site.students enrolled")}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 responsive-column-half">
@@ -442,8 +442,8 @@
                             </g>
                         </svg>
                     </div>
-                    <h4 class="counter__title counter text-color-5">20</h4>
-                    <p class="counter__meta">years of experience</p>
+                    <h4 class="counter__title counter text-color-5">{{__("site.20")}}</h4>
+                    <p class="counter__meta">{{__("site.years of experience")}}</p>
                 </div><!-- end counter-item -->
             </div><!-- end col-lg-3 -->
         </div><!-- end row -->
@@ -480,13 +480,13 @@
             <div class="col-lg-6">
                 <div class="about-content pb-5">
                     <div class="section-heading">
-                        <h5 class="ribbon ribbon-lg mb-2">About us</h5>
-                        <h2 class="section__title">Benefits of Learning With Aduca</h2>
+                        <h5 class="ribbon ribbon-lg mb-2">{{__("site.About us")}}</h5>
+                        <h2 class="section__title">{{__("site.Benefits of Learning With Aduca")}}</h2>
                         <span class="section-divider"></span>
                         <p class="section__desc">
-                            Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                           {{__("site.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                             the industry’s when an unknown printerit to make a type specimen book
-                            Pellentesque tellus arcu
+                            Pellentesque tellus arcu")}}
                         </p>
                     </div><!-- end section-heading -->
                     <div class="row pt-4 pb-3">
@@ -544,7 +544,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <h4 class="fs-20 font-weight-semi-bold pt-3">130,000 Courses</h4>
+                                <h4 class="fs-20 font-weight-semi-bold pt-3">{{__("site.130,000 Courses")}}</h4>
                             </div><!-- end info-icon-box -->
                         </div><!-- end col-lg-4 -->
                         <div class="col-lg-4 responsive-column-half">

@@ -13,13 +13,13 @@
     <div class="container">
         <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
             <div class="section-heading">
-                <h2 class="section__title text-white">Recover Password</h2>
+                <h2 class="section__title text-white">{{__("site.Recover Password")}}</h2>
             </div>
             <ul
                 class="generic-list-item generic-list-item-white generic-list-item-arrow d-flex flex-wrap align-items-center">
-                <li><a href="index.html">Home</a></li>
-                <li>Pages</li>
-                <li>Recover Password</li>
+                <li><a href="index.html">{{__("site.Home")}}</a></li>
+                <li>{{__("site.Pages")}}</li>
+                <li>{{__("Recover Password")}}</li>
             </ul>
         </div><!-- end breadcrumb-content -->
     </div><!-- end container -->
@@ -38,14 +38,14 @@
             <div class="col-lg-7 mx-auto">
                 <div class="card card-item">
                     <div class="card-body">
-                        <h3 class="card-title fs-24 lh-35 pb-2">Otp</h3>
+                        <h3 class="card-title fs-24 lh-35 pb-2">{{__("site.Otp")}}</h3>
                         @include('website.layouts.components.messages.success')
                         @include('website.layouts.components.messages.displayErrors')
                         <div class="section-block"></div>
                         <form method="post" class="pt-4" action="{{ route('resetPassword') }}">
                             @csrf
                             <div class="input-box">
-                                <label class="label-text">Password</label>
+                                <label class="label-text">{{__("site.Password")}}</label>
                                 <div class="input-group mb-3">
                                     <span class="la la-lock input-icon"></span>
                                     <input class="form-control form--control password-field" type="password"
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="input-box">
-                                    <label class="label-text">Password Confirm</label>
+                                    <label class="label-text">{{__("site.Password Confirm")}}</label>
                                     <div class="input-group mb-3">
                                         <span class="la la-lock input-icon"></span>
                                         <input class="form-control form--control password-field" type="password"
@@ -100,7 +100,7 @@
                             <div class="btn-box">
 
                                 <div class="btn-box">
-                                    <button class="btn theme-btn" type="submit">Reset Password <i
+                                    <button class="btn theme-btn" type="submit">{{__("site.Reset Password")}} <i
                                             class="la la-arrow-right icon ml-1"></i></button>
 
                                 </div><!-- end btn-box -->

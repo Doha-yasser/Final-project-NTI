@@ -21,7 +21,7 @@
         <!-- بادجات -->
         <div class="course-badge-labels">
             @if($course->is_bestseller)
-                <div class="course-badge">Bestseller</div>
+                <div class="course-badge">{{__("site.Bestseller")}}</div>
             @endif
             @if($course->discount)
                 <div class="course-badge blue">-{{ $course->discount }}%</div>
