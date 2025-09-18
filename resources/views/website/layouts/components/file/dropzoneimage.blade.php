@@ -1,5 +1,5 @@
 <div class="form-group mb-4">
-    <label class="form-label" for="{{ $idNameForjs}}">{{ __('site.course_picture') }}</label>
+    <label class="form-label" for="{{ $idNameForjs}}">{{ __('site.'.$name) }}</label>
         <div class="dropzone" id="{{ $idNameForjs}}">
             <div class="dz-message needsclick">
                 <i class="la la-cloud-upload mr-2 fs-18"></i>

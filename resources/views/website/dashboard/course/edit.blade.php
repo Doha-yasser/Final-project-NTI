@@ -19,42 +19,37 @@
 <div class="container-fluid">
     <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between mb-5">
         <div class="media media-card align-items-center">
-            <div class="media-img media--img media-img-md rounded-full">
-                <img class="rounded-full" src="images/small-avatar-1.jpg" alt="Student thumbnail image">
-            </div>
+
             <div class="media-body">
                 <h2 class="section__title fs-30">{{session('user')->name}}</h2>
 
             </div><!-- end media-body -->
         </div><!-- end media -->
-        <div class="file-upload-wrap file-upload-wrap-2 file--upload-wrap">
-            <input type="file" name="files[]" class="multi file-upload-input">
-        </div><!-- file-upload-wrap -->
+
     </div><!-- end breadcrumb-content -->
     <div class="section-block mb-5"></div>
     <div class="dashboard-heading mb-5">
-        <h3 class="fs-22 font-weight-semi-bold">Edit Course</h3>
+        <h3 class="fs-22 font-weight-semi-bold">{{__("site.Edit Course")}}</h3>
     </div>
     @include("website.layouts.components.messages.displayErrors")
     @include("website.layouts.components.messages.Success")
-    <form action="{{ route('mycourses.create', ['mycourse' => $course->id]) }}" method="post" enctype="multipart/form-data" id="formDropzone">
+    <form action="{{ route('mycourses.update',  $course->id) }}" method="post" enctype="multipart/form-data" id="formDropzone">
         @csrf
         @method('PUT')
         <div class="card card-item">
             <div class="card-body">
-                <h3 class="fs-22 font-weight-semi-bold pb-2">Basic info</h3>
                 <div class="divider"><span></span></div>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="label-text">Course Title</label>
+                            <label class="label-text">{{__("site.Course Title")}}</label>
                             <input class="form-control form--control pl-3" type="text" name="title"
                                value="{{ $course->title }}" >
                         </div>
                     </div><!-- end col-lg-12 -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="label-text">Course Subtitle</label>
+                            <label class="label-text">{{__("site.date")}}</label>
                             <input class="form-control form--control pl-3" type="date" name="start_date"
                                 value="{{ $course->start_date }}" >
                         </div>
@@ -63,7 +58,7 @@
 
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="label-text">Max strudent</label>
+                            <label class="label-text">{{__("site.Max strudent")}}</label>
                             <input class="form-control form--control pl-3" type="number" name="max_students"
                                 value="{{ $course->max_students }}">
                         </div>
@@ -71,7 +66,7 @@
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="label-text">Course Description</label>
+                            <label class="label-text">{{__("site.Course Description")}}</label>
                             <textarea class="form-control form--control pl-3" name="description">{{ $course->description }}</textarea>
                         </div>
                     </div><!-- end col-lg-12 -->

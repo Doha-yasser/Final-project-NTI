@@ -25,4 +25,17 @@ class ProfileController extends Controller
         session()->put('user', $user);
         return back()->with('success', 'Profile updated successfully');
     }
+    public function changeLang()
+    {
+        $user = User::find(session('user')->id);
+        if($user->lang == 'ar'){
+            $lang = 'en';
+        }else{
+            $lang = 'ar';
+        }
+        $user->lang = $lang;
+        $user->save();
+        session()->put('user', $user);
+        return redirect()->back();
+    }
 }

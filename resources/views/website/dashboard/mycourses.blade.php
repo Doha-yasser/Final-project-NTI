@@ -36,7 +36,7 @@
 
 
                 <li class="mr-2">
-                    <span class="text-black">Students:</span>
+                    <span class="text-black">{{__("site.students")}}:</span>
                     <span>{{ $course->students->count() }}</span>
                 </li>
             </ul>

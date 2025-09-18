@@ -22,9 +22,9 @@
         <table class="table generic-table">
             <thead>
                 <tr>
-                    <th>Student Name</th>
-                    <th>course Name</th>
-                    <th>Action</th>
+                    <th>{{__("site.Student Name")}}</th>
+                    <th>{{__("site.course Name")}}</th>
+                    <th>{{__("site.Action")}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">
-                                <i class="la la-trash"></i> Delete
+                                <i class="la la-trash"></i> {{__("site.Delete")}}
                             </button>
                         </form>
                     </td>

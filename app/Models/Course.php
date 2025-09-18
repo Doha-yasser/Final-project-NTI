@@ -39,9 +39,9 @@ class Course extends Model
         return $this->enrollments()->count() >= $this->max_students;
     }
     public function isEnrolled($id)
-{
-    return $this->students()->where('user_id', $id)->exists();
-}
+    {
+        return $this->students()->where('user_id', $id)->exists();
+    }
 
     public function scopeSearch($query, $request)
     {

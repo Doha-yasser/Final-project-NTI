@@ -40,11 +40,11 @@
                                     <div class="lecture-overview-item">
                                         <div class="lecture-overview-stats-wrap d-flex">
                                             <div class="lecture-overview-stats-item">
-                                                <h3 class="fs-16 font-weight-semi-bold pb-2">By the numbers</h3>
+                                                <h3 class="fs-16 font-weight-semi-bold pb-2">{{__("site.By the numbers")}}</h3>
                                             </div><!-- end lecture-overview-stats-item -->
                                             <div class="lecture-overview-stats-item">
                                                 <ul class="generic-list-item">
-                                                    <li><span>Students:</span>{{$course->students->count()}}</li>
+                                                    <li><span>{{__("site.Students")}}:</span>{{$course->students->count()}}</li>
                                                 </ul>
                                             </div><!-- end lecture-overview-stats-item -->
                                             
@@ -57,7 +57,7 @@
                                     <div class="lecture-overview-item">
                                         <div class="lecture-overview-stats-wrap d-flex ">
                                             <div class="lecture-overview-stats-item">
-                                                <h3 class="fs-16 font-weight-semi-bold pb-2">Instructor</h3>
+                                                <h3 class="fs-16 font-weight-semi-bold pb-2">{{__("site.Instructor")}}</h3>
                                             </div><!-- end lecture-overview-stats-item -->
                                             <div class="lecture-overview-stats-item lecture-overview-stats-wide-item">
                                                 <div class="media media-card align-items-center">

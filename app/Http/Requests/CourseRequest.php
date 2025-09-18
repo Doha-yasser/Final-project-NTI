@@ -21,7 +21,7 @@ class CourseRequest extends FormRequest
      */
     public function rules(): array
     {
-        $courseId = $this->route("id");
+        $courseId = $this->route("mycourse");
 
         return [
             'title' => 'required|string|max:255',
