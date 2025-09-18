@@ -78,12 +78,7 @@
                             </div><!-- end input-box -->
                             <div class="btn-box">
                                 <div class="d-flex align-items-center justify-content-between pb-4">
-                                    <div class="custom-control custom-checkbox fs-15">
-                                        <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox"
-                                            required>
-                                        <label class="custom-control-label custom--control-label"
-                                            for="rememberMeCheckbox">{{__("site.Remember Me")}}</label>
-                                    </div><!-- end custom-control -->
+                                    
                                     <a href="forgetpassword" class="btn-text">{{__("site.Forgot my password?")}}</a>
                                 </div>
                                 <button class="btn theme-btn" type="submit">{{__("site.Login Account")}} <i

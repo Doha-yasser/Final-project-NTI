@@ -15,16 +15,16 @@
         rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" sizes="16x16" href="{{asset("images/favicon.png")}}">
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/line-awesome.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="css/fancybox.css">
-    <link rel="stylesheet" href="css/tooltipster.bundle.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/line-awesome.css")}}">
+    <link rel="stylesheet" href="{{asset("css/owl.carousel.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/owl.theme.default.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/bootstrap-select.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/fancybox.css")}}">
+    <link rel="stylesheet" href="{{asset("css/tooltipster.bundle.css")}}">
+    <link rel="stylesheet" href="{{asset("css/style.css")}}">
     <!-- end inject -->
 </head>

@@ -5,7 +5,7 @@
             <div class="modal-header border-bottom-gray">
                 <div class="pr-2">
                     <h5 class="modal-title fs-19 font-weight-semi-bold lh-24" id="ratingModalTitle">
-                        How would you rate this course?
+                        {{__("site.How would you rate this course?") }}
                     </h5>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

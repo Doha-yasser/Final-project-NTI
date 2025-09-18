@@ -8,7 +8,7 @@
     <div class="container">
         <div class="breadcrumb-content">
             <div class="section-heading">
-                <h2 class="section__title">All Courses</h2>
+                <h2 class="section__title">{{__("site.All Courses") }}</h2>
             </div><!-- end section-heading -->
 
         </div><!-- end breadcrumb-content -->

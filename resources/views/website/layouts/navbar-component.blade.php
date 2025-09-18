@@ -20,7 +20,7 @@
                     <div class="theme-picker d-flex align-items-center justify-content-center lh-40">
                         <button
                             class="theme-picker-btn dark-mode-btn w-100 font-weight-semi-bold justify-content-center"
-                            title="Dark mode">
+                            title="Dark mode" >
                             <svg class="mr-1" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
@@ -53,35 +53,28 @@
                 </li>
                 <li>
                     <ul class="generic-list-item">
+                        @if(session('user')->type == 'instructor')
                         <li>
-                            <a href="my-courses.html">
+                            <a href="{{ route('mycourses.index') }}">
                                 <i class="la la-file-video-o mr-1"></i> My courses
                             </a>
                         </li>
-
-
-
-
                         <li>
                             <div class="section-block"></div>
                         </li>
-
-
-                        <li>
-                            <div class="section-block"></div>
-                        </li>
+                        @endif
                         <li>
                             <a href="{{ route('home') }}">
                                 <i class="la la-user mr-1"></i> home
                             </a>
                         </li>
                         <li>
-                            <a href="instructorProfile">
+                            <a href="{{ route('dashboard') }}">
                                 <i class="la la-user mr-1"></i> dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ route('profile.index') }}">
                                 <i class="la la-edit mr-1"></i> Edit profile
                             </a>
                         </li>

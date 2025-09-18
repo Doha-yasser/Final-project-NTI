@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Aduca -  Education HTML Template</title>
+    <title>{{__("site.Aduca -  Education HTML Template") }} </title>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -73,7 +73,7 @@
                                         <ul>
                                             <li>
                                                 <p class="shop-cart-btn d-flex align-items-center fs-16">
-                                                    My Courses
+                                                    {{__("site.Aduca -  My Courses") }}
                                                     <span class="la la-angle-down fs-13 ml-1"></span>
                                                 </p>
                                                 <ul class="cart-dropdown-menu after-none">
@@ -82,7 +82,7 @@
                                                             <img class="mr-3" src="images/small-img-3.jpg" alt="Course thumbnail image">
                                                         </a>
                                                         <div class="media-body">
-                                                            <h5><a href="#">The Complete JavaScript Course 2021: From Zero to Expert!</a></h5>
+                                                            <h5><a href="#">{{__("site.Aduca - The Complete JavaScript Course 2021: From Zero to Expert!") }}</a></h5>
                                                             <div class="skillbar-box pt-3">
                                                                 <div class="skillbar skillbar-skillbar" data-percent="36%">
                                                                     <div class="skillbar-bar skillbar--bar bg-1"></div>
@@ -95,7 +95,7 @@
                                                             <img class="mr-3" src="images/small-img-4.jpg" alt="Course thumbnail image">
                                                         </a>
                                                         <div class="media-body">
-                                                            <h5><a href="#">The Complete JavaScript Course 2021: From Zero to Expert!</a></h5>
+                                                            <h5><a href="#">{{__("site.Aduca - The Complete JavaScript Course 2021: From Zero to Expert!") }}</a></h5>
                                                             <div class="skillbar-box pt-3">
                                                                 <div class="skillbar skillbar-skillbar" data-percent="77%">
                                                                     <div class="skillbar-bar skillbar--bar bg-1"></div>
@@ -104,7 +104,7 @@
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <a href="studentcourses" class="btn theme-btn w-100">Got to my course <i class="la la-arrow-right icon ml-1"></i></a>
+                                                        <a href="studentcourses" class="btn theme-btn w-100">{{__("site.Got to my course") }} <i class="la la-arrow-right icon ml-1"></i></a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -123,9 +123,9 @@
                                                             <img class="mr-3" src="images/small-img.jpg" alt="Cart image">
                                                         </a>
                                                         <div class="media-body">
-                                                            <h5><a href="cartl">The Complete JavaScript Course 2021: From Zero to Expert!</a></h5>
-                                                            <span class="d-block lh-18 py-1">Kamran Ahmed</span>
-                                                            <p class="text-black font-weight-semi-bold lh-18">$12.99 <span class="before-price fs-14">$129.99</span></p>
+                                                            <h5><a href="cartl">{{__("site.The Complete JavaScript Course 2021: From Zero to Expert!") }}</a></h5>
+                                                            <span class="d-block lh-18 py-1">{{__("site.Kamran Ahmed") }}</span>
+                                                            <p class="text-black font-weight-semi-bold lh-18">{{__("site.$12.99") }} <span class="before-price fs-14">$129.99</span></p>
                                                         </div>
                                                     </li>
                                                     <li class="media media-card">
@@ -140,11 +140,11 @@
                                                     </li>
                                                     <li class="media media-card">
                                                         <div class="media-body fs-16">
-                                                            <p class="text-black font-weight-semi-bold lh-18">Total: <span class="cart-total">$12.99</span> <span class="before-price fs-14">$129.99</span></p>
+                                                            <p class="text-black font-weight-semi-bold lh-18">{{__("site.Total:") }} <span class="cart-total">$12.99</span> <span class="before-price fs-14">$129.99</span></p>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <a href="cart" class="btn theme-btn w-100">Got to cart <i class="la la-arrow-right icon ml-1"></i></a>
+                                                        <a href="cart" class="btn theme-btn w-100">{{__("site.Got to cart") }} <i class="la la-arrow-right icon ml-1"></i></a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -166,7 +166,7 @@
                                                             <div class="media-body">
                                                                 <h5><a href="course-details.html">The Complete JavaScript Course 2021: From Zero to Expert!</a></h5>
                                                                 <span class="d-block lh-18 py-1">Kamran Ahmed</span>
-                                                                <p class="text-black font-weight-semi-bold lh-18">$12.99 <span class="before-price fs-14">$129.99</span></p>
+                                                                <p class="text-black font-weight-semi-bold lh-18">$12.99 <span class="before-price fs-14">{{__("site.$129.99") }}</span></p>
                                                             </div>
                                                         </div>
                                                         <a href="#" class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 w-100 mt-3">Add to cart <i class="la la-arrow-right icon ml-1"></i></a>
@@ -185,7 +185,7 @@
                                                         <a href="#" class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 w-100 mt-3">Add to cart <i class="la la-arrow-right icon ml-1"></i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="studentprofile" class="btn theme-btn w-100">Got to wishlist <i class="la la-arrow-right icon ml-1"></i></a>
+                                                        <a href="studentprofile" class="btn theme-btn w-100">{{__("site.Got to wishlist") }} <i class="la la-arrow-right icon ml-1"></i></a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -200,8 +200,8 @@
                                                 </p>
                                                 <ul class="cart-dropdown-menu after-none p-0 notification-dropdown-menu">
                                                     <li class="menu-heading-block d-flex align-items-center justify-content-between">
-                                                        <h4>Notifications</h4>
-                                                        <span class="ribbon fs-14">18</span>
+                                                        <h4>{{__("site.Notifications") }}</h4>
+                                                        <span class="ribbon fs-14">{{__("site.18") }}</span>
                                                     </li>
                                                     <li>
                                                         <div class="notification-body">
@@ -210,7 +210,7 @@
                                                                     <i class="la la-bolt"></i>
                                                                 </div>
                                                                 <div class="media-body">
-                                                                    <h5>Your resume updated!</h5>
+                                                                    <h5>{{__("site.Your resume updated!") }}</h5>
                                                                     <span class="d-block lh-18 pt-1 text-gray fs-13">1 hour ago</span>
                                                                 </div>
                                                             </a>
@@ -219,7 +219,7 @@
                                                                     <i class="la la-lock"></i>
                                                                 </div>
                                                                 <div class="media-body">
-                                                                    <h5>You changed password</h5>
+                                                                    <h5>{{__("site.You changed password") }}</h5>
                                                                     <span class="d-block lh-18 pt-1 text-gray fs-13">November 12, 2019</span>
                                                                 </div>
                                                             </a>

@@ -11,7 +11,7 @@
     </div><!-- end media -->
 </div><!-- end breadcrumb-content -->
 <div class="dashboard-heading mb-5">
-    <h3 class="fs-22 font-weight-semi-bold">My Courses</h3>
+    <h3 class="fs-22 font-weight-semi-bold">{{__("site.storage")}}</h3>
 </div>
 @include("website.layouts.components.messages.displayErrors")
 @include("website.layouts.components.messages.Success")
@@ -45,15 +45,6 @@
                 <div class="card-action-wrap pl-3">
                     <a href="{{ route('courses.show', $course->id) }}" class="icon-element icon-element-sm shadow-sm cursor-pointer ml-1 text-success"
                         data-toggle="tooltip" data-placement="top" data-title="View"><i class="la la-eye"></i></a>
-                    <a href="{{ route('mycourses.edit', $course->id) }}" class="icon-element icon-element-sm shadow-sm cursor-pointer ml-1 text-success"
-                        data-toggle="tooltip" data-placement="top" data-title="View">
-                        <i class="la la-edit"></i>
-                    </a>
-                    <div class="icon-element icon-element-sm shadow-sm cursor-pointer ml-1 text-danger"
-                        data-toggle="tooltip" data-placement="top" title="Delete">
-                        <span data-toggle="modal" data-target="#itemDeleteModal" class="w-100 h-100 d-inline-block"><i
-                                class="la la-trash"></i></span>
-                    </div>
                 </div>
             </div>
         </div><!-- end card-body -->

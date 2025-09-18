@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\EnrollController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\WebSite\AuthController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\WebSite\HomeController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHomeController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\WebSite\CourseController;
+use App\Http\Controllers\Dashboard\CourseController as DashboardCourseController;
 
 
 Route::group(['middleware' => ['auth_middleware']], function () {
@@ -25,6 +27,15 @@ Route::group(['middleware' => ['auth_middleware']], function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('about', function () {
+    return view('website/about');
+});
+Route::get('studentcourese', function () {
+    return view('website/studentcourese');
+});
+Route::get('lessondetails', function () {
+    return view('website/lessondetails');
+});
 
 Route::group(['middleware' => ['login_middleware']], function () {
 
@@ -34,7 +45,10 @@ Route::group(['middleware' => ['login_middleware']], function () {
     Route::get('/dashboard', [DashboardHomeController::class, 'index'])->name('dashboard');
     Route::get('dashboard/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('dashboard/{id}/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::get('/dashboard-courses', );
+    Route::resource('dashboard/mycourses', DashboardCourseController::class)->except('show');
+    Route::get('dashboard/storage', [DashboardCourseController::class, 'storage'])->name('storage');
+    Route::resource('dashboard/enrollments', EnrollController::class);
+    Route::get("courses/{course}", [HomeController::class, 'show'])->name('courses.show')->middleware('course');
 });
 
 
@@ -44,32 +58,21 @@ Route::group(['middleware' => ['login_middleware']], function () {
 
 
 
-Route::get('/dashboardinstructor', function () {
-    return view('website/dashboard/dashboardinstructor');
-});
 
 
 
-Route::get('mycourses', function () {
-    return view('website/dashboard/mycourses');
-});
+
 
 Route::get('enrollstudent', function () {
     return view('website/dashboard/enrollstudent');
 });
 
 
-Route::get('submitcourse', function () {
-    return view('website/dashboard/submitcourse');
-});
 
 
 
 
-// page not found
+
 Route::fallback(function () {
-    if (request()->is('admin/*')) {
-        return view('dashboard.pages.404');
-    }
-    return view('pageNotFound');
+    return view('website/error');
 });

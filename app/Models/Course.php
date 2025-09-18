@@ -14,7 +14,6 @@ class Course extends Model
         "max_students",
         'instructor_id',
         'image',
-        'price',
         "video",
     ];
 
@@ -30,14 +29,20 @@ class Course extends Model
     {
         return $this->belongsToMany(User::class, 'enrollments');
     }
-    public function seatsLeft()
+    public function getSeatsLeftAttribute(): int
     {
         return $this->max_students - $this->enrollments()->count();
     }
-    public function isFull()
+
+    public function getIsFullAttribute()
     {
         return $this->enrollments()->count() >= $this->max_students;
     }
+    public function isEnrolled($id)
+{
+    return $this->students()->where('user_id', $id)->exists();
+}
+
     public function scopeSearch($query, $request)
     {
         if ($request->filled('search'))

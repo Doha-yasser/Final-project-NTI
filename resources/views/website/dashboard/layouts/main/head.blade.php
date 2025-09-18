@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Aduca -  Education HTML Template</title>
+    <title>{{__("site.Aduca -  Education HTML Template") }}</title>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,10 +19,14 @@
     <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/line-awesome.css")}}">
     <link rel="stylesheet" href="{{asset("css/owl.carousel.min.css")}}">
+    @yield('mid-css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css">
     <link rel="stylesheet" href="{{asset("css/owl.theme.default.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/bootstrap-select.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/fancybox.css")}}">
     <link rel="stylesheet" href="{{asset("css/style.css")}}">
+    @yield('css')
+
     <!-- end inject -->
 </head>
 <body>

@@ -1,10 +1,10 @@
 <table class="table generic-table">
     <thead>
         <tr>
-            <th scope="col">Image</th>
-            <th scope="col">Product Details</th>
-            <th scope="col">buy</th>
-            <th scope="col">delete</th>
+            <th>Image</th>
+            <th>Product Details</th>
+            <th>buy</th>
+            <th>delete</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +13,7 @@
         <tr>
             <th scope="row">
                 <div class="media media-card">
-                    <a href="" class="media-img mr-0">
+                    <a href="{{route("courses.show", $course->id)}}" class="media-img mr-0">
                         <img src="images/img-loading.png" alt="Cart image">
                     </a>
                 </div>
@@ -24,18 +24,28 @@
                 </a>
                 <p class="fs-14 text-gray lh-20">
                     By
-                    
-                        {{ $course->instructor->name }} :
+
+                    {{ $course->instructor->name }} :
                     {{ $course->description }}
                 </p>
             </td>
 
             <td>
-                <div class="quantity-wishlist d-flex align-wishlists-center">
-                    <button class="qtyBtn qtyDec"><i class="la la-minus"></i></button>
-                    <input class="qtyInput" type="text" name="qty-input" value="1">
-                    <button class="qtyBtn qtyInc"><i class="la la-plus"></i></button>
-                </div>
+                <form action="{{route("enrollments.store")}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="course_id" value="{{$course->id}}">
+                    @if($course->isEnrolled(session('user')->id))
+
+                    <button class="btn theme-btn" type="submit" disabled>{{__("site.you are enrolled")}} <i
+                            class="la la-arrow-right icon ml-1"></i></button>
+                    @elseif($course->seatsLeft > 0)
+                    <button class="btn theme-btn" type="submit">{{__("site.enroll")}} <i
+                            class="la la-arrow-right icon ml-1"></i></button>
+                    @else
+                    <button class="btn theme-btn" type="submit" disabled>{{__("site.enroll")}} <i
+                            class="la la-arrow-right icon ml-1"></i></button>
+                    @endif
+                </form>
             </td>
 
             <td>

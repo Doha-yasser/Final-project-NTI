@@ -189,6 +189,8 @@
         </div><!-- end section-heading -->
 
     </div><!-- end container -->
+    @include("website.layouts.components.messages.success")
+    @include("website.layouts.components.messages.displayErrors")
     <div class="card-content-wrapper bg-gray pt-50px pb-120px">
         <div class="container">
             <div class="tab-content" id="myTabContent">

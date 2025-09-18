@@ -29,7 +29,8 @@ return Application::configure(basePath: dirname(__DIR__))
             "lang" => LangMiddleware::class,
             "otp" => \App\Http\Middleware\EnsureEmailInSession::class,
             'otp_verified' => \App\Http\Middleware\EnsureOtpVerified::class,
-            'auth_middleware' => \App\Http\Middleware\auth_middleware::class
+            'auth_middleware' => \App\Http\Middleware\auth_middleware::class,
+            "course" => \App\Http\Middleware\CourseMiddleWare::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

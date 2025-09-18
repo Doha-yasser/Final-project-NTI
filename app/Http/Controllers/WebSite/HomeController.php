@@ -13,4 +13,8 @@ class HomeController extends Controller
         $latestCourses=Course::latest()->take(6)->get();
         return view('website.home.home',compact('latestCourses'));
     }
+
+    public function show(Course $course){
+        return view('website.course', compact('course'));
+    }
 }

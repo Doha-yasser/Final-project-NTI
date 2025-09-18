@@ -18,7 +18,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-box">
-                            <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+                            <a href="index.html" class="logo"><img src="{{asset("images/logo.png")}}" alt="logo"></a>
                             <div class="user-btn-action">
                                 <div class="search-menu-toggle icon-element icon-element-sm shadow-sm mr-2"
                                     data-toggle="tooltip" data-placement="top" title="" data-original-title="Search">
@@ -65,55 +65,9 @@
                                         <ul>
                                             <li>
                                                 <p class="shop-cart-btn">
-                                                    <i class="la la-heart-o"></i>
+                                                    <a href="{{ route('wishlist.index') }}"><i class="la la-heart-o"></i></a>
                                                 </p>
-                                                <ul class="cart-dropdown-menu after-none">
-                                                    <li>
-                                                        <div class="media media-card">
-                                                            <a href="course-details.html" class="media-img">
-                                                                <img class="mr-3" src="images/small-img.jpg"
-                                                                    alt="Cart image">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <h5><a href="course-details.html">The Complete
-                                                                        JavaScript Course 2021: From Zero to
-                                                                        Expert!</a></h5>
-                                                                <span class="d-block lh-18 py-1">Kamran Ahmed</span>
-                                                                <p class="text-black font-weight-semi-bold lh-18">
-                                                                    $12.99 <span
-                                                                        class="before-price fs-14">$129.99</span>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"
-                                                            class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 w-100 mt-3">Add
-                                                            to cart <i class="la la-arrow-right icon ml-1"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="media media-card">
-                                                            <a href="#" class="media-img">
-                                                                <img class="mr-3" src="images/small-img.jpg"
-                                                                    alt="Cart image">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <h5><a href="#">The Complete JavaScript Course 2021:
-                                                                        From Zero to Expert!</a></h5>
-                                                                <span class="d-block lh-18 py-1">Kamran Ahmed</span>
-                                                                <p class="text-black font-weight-semi-bold lh-18">
-                                                                    $12.99 <span
-                                                                        class="before-price fs-14">$129.99</span>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"
-                                                            class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 w-100 mt-3">Add
-                                                            to cart <i class="la la-arrow-right icon ml-1"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist" class="btn theme-btn w-100">Got to wishlist <i
-                                                                class="la la-arrow-right icon ml-1"></i></a>
-                                                    </li>
-                                                </ul>
+                                                
                                             </li>
                                         </ul>
                                     </div><!-- end shop-cart -->
