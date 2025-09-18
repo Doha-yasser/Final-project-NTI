@@ -29,6 +29,7 @@ class UserRequest extends FormRequest
             'password' => $userId ? 'nullable|min:6|confirmed' : 'required|min:6|confirmed',
             'lang' => $userId ? 'nullable|string|max:255' : 'required|string|max:255',
             'type' => $userId ? 'nullable|string|max:255' : 'required|string|max:255',
+            "image" => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048' ,
         ];
     }
 }

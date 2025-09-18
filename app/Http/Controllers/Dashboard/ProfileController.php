@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Http\Traits\MediaTrait;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
+    use MediaTrait;
     public function index()
     {
         return view('website.dashboard.profile');
@@ -16,10 +18,13 @@ class ProfileController extends Controller
     public function update(UserRequest $request, $id)
     {
         $user = User::findOrFail($id);
-        $data = $request->except('password', 'password_confirmation');
+        $data = $request->except('password', 'password_confirmation', 'image');
 
         if ($request->filled('password')) {
             $data['password'] = bcrypt($request->password);
+        }
+        if($request->hasFile('image')) {
+            $data['image'] = $this->editFile($request, $user, 'users/images', 'image');
         }
         $user->update($data);
         session()->put('user', $user);
