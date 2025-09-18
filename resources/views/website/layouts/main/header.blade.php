@@ -71,6 +71,16 @@
                                             </li>
                                         </ul>
                                     </div><!-- end shop-cart -->
+                                    <div class="shop-cart wishlist-cart pr-3 mr-3 border-right border-right-gray">
+                                        <ul>
+                                            <li>
+                                                <p class="shop-cart-btn">
+                                                    <a href="{{ route('about') }}"><i class="la la-user-o"></i></a>
+                                                </p>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div><!-- end shop-cart -->
                                     @if(session('user'))
                                     @include("website.layouts.navbar-component")
                                     @else

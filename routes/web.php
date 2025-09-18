@@ -29,13 +29,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('about', function () {
     return view('website/about');
-});
+})->name('about');
 Route::get('studentcourese', function () {
     return view('website/studentcourese');
 });
-Route::get('lessondetails', function () {
-    return view('website/lessondetails');
-});
+
 
 Route::group(['middleware' => ['login_middleware']], function () {
 
