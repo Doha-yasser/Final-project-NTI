@@ -31,8 +31,8 @@ class CourseController extends Controller
     {
         $data = $request->all();
         $data['instructor_id'] = session()->get('user')->id;
-        $data['image'] = $this->uploadFile('courses/images', $request ,'image');
-        $data['video'] = $this->uploadFile('courses/videos', $request ,'video');
+        $data['image'] = $this->uploadFile('courses/images', $request, 'image');
+        $data['video'] = $this->uploadFile('courses/videos', $request, 'video');
         Course::create($data);
         return redirect()->route('mycourses.index')->with('success', __("site.added_successfully"));
     }
@@ -46,13 +46,17 @@ class CourseController extends Controller
         $data = $request->all();
         $course = Course::find($id);
         $data['image'] = $this->editFile($request, $course, 'courses/images', 'image');
-        $data['video'] = $this->editFile($request, $course, 'courses/videos' ,'video');
-        
+        $data['video'] = $this->editFile($request, $course, 'courses/videos', 'video');
+
         $course->update($data);
         return redirect()->route('mycourses.index')->with('success', __("site.updated_successfully"));
     }
-    public function show( $id){
+    public function show($id)
+    {
         $course = Course::find($id);
+        if (! $course) {
+            return redirect()->route('home');
+        }
         return view('website/course', compact('course'));
     }
     public function destroy($id)
@@ -63,7 +67,8 @@ class CourseController extends Controller
         $course->delete();
         return redirect()->route('mycourses.index')->with('success', __("site.deleted_successfully"));
     }
-    public function storage(){
+    public function storage()
+    {
         $user = User::find(session()->get('user')->id);
         $courses = $user->enrollmentCourses()->paginate(6);
         return view('website/dashboard/storage', compact('courses'));

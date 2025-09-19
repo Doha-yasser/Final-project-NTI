@@ -63,8 +63,13 @@
                                                 <div class="media media-card align-items-center">
                                                     <a href="teacher-detail.html"
                                                         class="media-img d-block rounded-full avatar-md">
+                                                        @if($course->instructor->image != null)
+                                                        <img src="{{asset($course->instructor->image)}}" alt="Instructor avatar"
+                                                            class="rounded-full">
+                                                        @else
                                                         <img src="{{asset("images/small-avatar-1.jpg")}}" alt="Instructor avatar"
                                                             class="rounded-full">
+                                                        @endif
                                                     </a>
                                                     <div class="media-body">
                                                         <h5><a href="teacher-detail.html">{{$course->instructor->name ?? ""}}</a></h5>

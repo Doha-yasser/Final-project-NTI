@@ -14,7 +14,7 @@
     <h3 class="fs-22 font-weight-semi-bold">{{__("site.storage")}}</h3>
 </div>
 @include("website.layouts.components.messages.displayErrors")
-@include("website.layouts.components.messages.Success")
+@include("website.layouts.components.messages.success")
 @foreach ($courses as $course)
 <div class="dashboard-cards mb-5">
     <div class="card card-item card-item-list-layout">

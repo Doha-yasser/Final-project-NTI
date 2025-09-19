@@ -14,7 +14,8 @@ class HomeController extends Controller
         return view('website.home.home',compact('latestCourses'));
     }
 
-    public function show(Course $course){
+    public function show( $id){
+        $course = Course::find($id);
         return view('website.course', compact('course'));
     }
 }

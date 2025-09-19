@@ -59,7 +59,8 @@ Route::group(['middleware' => ['lang']], function () {
 
 
 
-    Route::fallback(function () {
-        return view('website/error');
-    });
+
 });
+    Route::fallback(function () {
+         return redirect()->route('home');
+    });

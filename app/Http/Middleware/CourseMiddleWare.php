@@ -18,16 +18,15 @@ class CourseMiddleWare
     public function handle(Request $request, Closure $next): Response
     {
         $user = User::find(session()->get('user')->id);
-        $course = Course::find($request->route('course')->id);
-
+        $course = Course::find($request->route('course'));
         if (!$user || !$course) {
-            return back()->with('error', __("site.not_found"));
+            return redirect()->route('home')->with('error', __("site.not_found"));
         }
 
         if ($user->enrollments()->where('course_id', $course->id)->exists() || $course->instructor_id == $user->id) {
             return $next($request);
         }
 
-        return back()->with('error', __("site.not_enrolled"));
+        return  redirect()->route('home')->with('error', __("site.not_enrolled"));
     }
 }
