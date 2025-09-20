@@ -144,4 +144,7 @@ return [
     "you are enrolled" => "You Enrolled this course",
 
     "Your Free Courses!"=>"Your Free Courses!",
+
+
+    "Drag_file_here_to_upload"=>"Drag file here to upload",
 ];

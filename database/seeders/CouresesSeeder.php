@@ -13,12 +13,12 @@ class CouresesSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 0; $i < 10; $i++){
+        for($i = 1; $i <= 10; $i++){
             Course::create([
                 "title" => "Course $i",
                 "description" => "Description $i",
-                "image" => asset("images/9056d37cff0fcead7492b2a4fb4b01cf.jpg"),
-                "video" => asset("images/9056d37cff0fcead7492b2a4fb4b01cf.jpg"),
+                "image" => "uploads/courses/images/$i.jpg",
+                "video" => "uploads/courses/videos/$i.mp4",
                 "instructor_id" => 1,
                 "max_students" => 10,
                 "start_date" => now()

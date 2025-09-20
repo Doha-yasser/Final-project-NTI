@@ -1,7 +1,7 @@
 <script>
 Dropzone.autoDiscover = false;
 
-function initDropzone(selector, hiddenInputId, acceptedFiles, maxFiles = 1, maxFilesize = 200000, existingFileUrl = null, existingFileName = null) {
+function initDropzone(selector, hiddenInputId, acceptedFiles, maxFiles = 1, maxFilesize = 1000, existingFileUrl = null, existingFileName = null) {
     return new Dropzone(selector, {
         url: "/", // لا يتم الرفع مباشرة
         autoProcessQueue: false,
